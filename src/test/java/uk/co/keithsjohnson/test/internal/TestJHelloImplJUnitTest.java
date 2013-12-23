@@ -1,11 +1,9 @@
-package uk.co.keithsjohnson.test;
+package uk.co.keithsjohnson.test.internal;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import uk.co.keithsjohnson.test.TestHelloImpl;
-
-public class TestJUnitTest {
+public class TestJHelloImplJUnitTest {
 	TestHelloImpl testSubjecTest;
 
 	@Before
