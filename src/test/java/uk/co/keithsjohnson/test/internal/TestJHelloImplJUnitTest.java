@@ -3,17 +3,19 @@ package uk.co.keithsjohnson.test.internal;
 import org.junit.Before;
 import org.junit.Test;
 
+import uk.co.keithsjohnson.test.TestHello;
+
 public class TestJHelloImplJUnitTest {
-	TestHelloImpl testSubjecTest;
+	TestHello testSubject;
 
 	@Before
 	public void setup() {
-		testSubjecTest = new TestHelloImpl();
+		testSubject = new TestHelloImpl();
 	}
-	
+
 	@Test
 	public void shouldSayHello() {
-		testSubjecTest.printHello();
+		testSubject.printHello();
 	}
 
 }
