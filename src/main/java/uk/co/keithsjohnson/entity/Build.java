@@ -1,25 +1,27 @@
 package uk.co.keithsjohnson.entity;
 
-//@Entity
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Build {
 
-	// @Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String firstName;
-	private String lastName;
+	private String name;
 
 	protected Build() {
 	}
 
-	public Build(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public Build(String name) {
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Customer[id=%d, firstName='%s', lastName='%s']",
-				id, firstName, lastName);
+		return String.format("Build[id=%d, bame='%s']", id, name);
 	}
 }
