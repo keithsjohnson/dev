@@ -1,4 +1,4 @@
-package uk.co.keithsjohnson.entity;
+package uk.co.keithsjohnson.main;
 
 import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.H2;
 
@@ -19,6 +19,8 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import uk.co.keithsjohnson.entity.Build;
+
 @Configuration
 @EnableJpaRepositories
 public class Application {
@@ -34,14 +36,14 @@ public class Application {
 		LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
 		lef.setDataSource(dataSource);
 		lef.setJpaVendorAdapter(jpaVendorAdapter);
-		lef.setPackagesToScan("uk.co.keithsjohnson.entity");
+		lef.setPackagesToScan(new String[] { "uk.co.keithsjohnson.entity" });
 		return lef;
 	}
 
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
-		hibernateJpaVendorAdapter.setShowSql(false);
+		hibernateJpaVendorAdapter.setShowSql(true);
 		hibernateJpaVendorAdapter.setGenerateDdl(true);
 		hibernateJpaVendorAdapter.setDatabase(Database.H2);
 		return hibernateJpaVendorAdapter;
