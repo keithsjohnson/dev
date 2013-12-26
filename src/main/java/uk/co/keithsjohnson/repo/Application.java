@@ -1,4 +1,4 @@
-package uk.co.keithsjohnson.main;
+package uk.co.keithsjohnson.repo;
 
 import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.H2;
 
