@@ -13,11 +13,19 @@ public class Build {
 	private long id;
 	private String name;
 
-	protected Build() {
+	public Build() {
 	}
 
 	public Build(String name) {
 		this.name = name;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	@Override
